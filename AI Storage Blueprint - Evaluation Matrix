@@ -1,0 +1,39 @@
+# **AI Storage Blueprint \- Evaluation Matrix**
+
+This document provides a summary of the storage requirements and recommended solutions for each stage of the AI lifecycle on Google Cloud.
+
+### **Stage 1: PREPARE**
+
+| Metric          | Requirement                     | Recommended Solution | Key Feature                      |
+| :-------------- | :------------------------------ | :------------------- | :------------------------------- |
+| **Capacity**    | Virtually Limitless (Petabytes) | Google Cloud Storage | Infinite Scalability             |
+| **Performance** | High Throughput (for Ingest)    | Google Cloud Storage | Global Namespace, High Bandwidth |
+| **Access**      | Universal, Simple API           | Google Cloud Storage | S3-Compatible API, SDKs          |
+| **Economics**   | Lowest Cost per Gigabyte        | Google Cloud Storage | AutoClass, Lifecycle Policies    |
+
+### **Stage 2: TRAIN**
+
+| Metric          | Requirement                    | Recommended Solution(s)    | Key Feature                                    |
+| :-------------- | :----------------------------- | :------------------------- | :--------------------------------------------- |
+| **Capacity**    | Curated Dataset (100s of TBs)  | GCS with FUSE / Lustre     | Scales as needed                               |
+| **Performance** | Max Throughput, Low Latency    | Managed Service for Lustre | Parallel File System, Low Latency              |
+| **Access**      | POSIX Compliance (often)       | Managed Service for Lustre | Full POSIX Support, File Locking               |
+| **Economics**   | Minimize Accelerator Idle Time | _Choose based on workload_ | Performance is more critical than storage cost |
+
+### **Stage 3: SERVE**
+
+| Metric          | Requirement                 | Recommended Solution(s)               | Key Feature                        |
+| :-------------- | :-------------------------- | :------------------------------------ | :--------------------------------- |
+| **Capacity**    | Model Files (100s of GBs)   | GCS with FUSE / Lustre / Hyperdisk ML | Easily handles model sizes         |
+| **Performance** | Low Latency Model Loading   | Hyperdisk ML                          | High Aggregate Read Throughput     |
+| **Access**      | Read-Only (many nodes)      | Hyperdisk ML                          | Multi-reader attach                |
+| **Economics**   | Fastest Time-to-First-Token | _Choose based on scale/frequency_     | Efficient use of serving instances |
+
+### **Stage 4: ARCHIVE**
+
+| Metric          | Requirement                     | Recommended Solution | Key Feature                        |
+| :-------------- | :------------------------------ | :------------------- | :--------------------------------- |
+| **Capacity**    | Extremely Large & Durable (PBs) | Google Cloud Storage | Built for Exabyte Scale            |
+| **Performance** | Not a Primary Concern           | Google Cloud Storage | High throughput even on cold tiers |
+| **Access**      | Write-Once, Read-Rarely         | Google Cloud Storage | Same API across all tiers          |
+| **Economics**   | Absolute Lowest Cost per GB     | Google Cloud Storage | Nearline, Coldline, Archive Tiers  |
