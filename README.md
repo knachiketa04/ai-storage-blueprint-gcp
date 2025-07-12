@@ -6,6 +6,16 @@ This repository contains the companion resources for the **AI Storage Blueprint*
 
 The goal of this blueprint is to provide a simple yet powerful evaluation matrix to help you analyze your workload's unique needs—from capacity and performance to access patterns and economics—to make the right choice at every stage of the AI lifecycle.
 
+## **⚠️ Important Disclaimer**
+
+> **This is not official Google documentation.** This blueprint represents my personal analysis and recommendations based on my experience with Google Cloud storage solutions. While I strive for accuracy, this content is provided for educational purposes only and should not be considered as official Google Cloud guidance.
+>
+> **Always refer to the official Google Cloud documentation** for authoritative information, current pricing, service availability, and technical specifications. Google Cloud services and their features may change over time.
+>
+> **No liability assumed:** The author assumes no responsibility for any decisions made based on this information. Please conduct your own testing and evaluation before implementing any storage solutions in production environments.
+>
+> For official information, please visit [Google Cloud Documentation](https://cloud.google.com/docs).
+
 ## **The 4 Stages of the AI Storage Blueprint**
 
 ### **Stage 1: PREPARE**

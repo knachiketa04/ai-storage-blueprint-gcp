@@ -2,6 +2,8 @@
 
 This document provides a summary of the storage requirements and recommended solutions for each stage of the AI lifecycle on Google Cloud.
 
+> **Disclaimer:** This is not official Google documentation. This evaluation matrix represents personal analysis and recommendations. Always refer to [official Google Cloud documentation](https://cloud.google.com/docs) for authoritative information. No liability assumed for decisions made based on this information.
+
 ### **Stage 1: PREPARE**
 
 | Metric          | Requirement                     | Recommended Solution | Key Feature                      |
